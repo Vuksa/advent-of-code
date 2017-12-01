@@ -1,7 +1,10 @@
+package puzzle1
+
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
 import org.junit.Test
+import puzzle1.InverseCaptcha
 import org.hamcrest.CoreMatchers.`is` as _is
 
 class InverseCaptchaTest {
