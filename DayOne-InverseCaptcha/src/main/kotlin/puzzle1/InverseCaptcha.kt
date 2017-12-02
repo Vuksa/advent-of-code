@@ -1,5 +1,7 @@
 package puzzle1
 
+import intValue
+
 class InverseCaptcha {
     fun sumSequence(sequence: String): Int {
         val appendedSequence = if (sequence.length > 2) sequence + sequence[0] else sequence
@@ -8,7 +10,6 @@ class InverseCaptcha {
                 .asSequence()
                 .filter { appendedSequence[it - 1] == appendedSequence[it] }
                 .sumBy { appendedSequence[it - 1].intValue() }
+
     }
 }
-
-private fun Char.intValue(): Int = toString().toInt()

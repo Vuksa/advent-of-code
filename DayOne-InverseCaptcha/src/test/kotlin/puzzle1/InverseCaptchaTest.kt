@@ -4,7 +4,6 @@ import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
 import org.junit.Test
-import puzzle1.InverseCaptcha
 import org.hamcrest.CoreMatchers.`is` as _is
 
 class InverseCaptchaTest {
@@ -27,7 +26,7 @@ class InverseCaptchaTest {
     }
 
     @Test
-    fun `should return n for sequence that has length of two has two identical n numbers one after another`() {
+    fun `should return n for sequence that has length of two and has two identical n numbers one after another`() {
         val character = 8
 
         val sum = inverseCaptcha.sumSequence("$character$character")
@@ -78,6 +77,18 @@ class InverseCaptchaTest {
 
         assertThat(sum, _is(equalTo(character1)))
     }
+
+    @Test
+    fun `should return n for sequence that has at least length of 3 and no numbers are identical`() {
+        val character1 = 2
+        val character2 = 3
+        val character3 = 4
+
+        val sum = inverseCaptcha.sumSequence("$character1$character2$character3")
+
+        assertThat(sum, _is(equalTo(0)))
+    }
+
 
     @Test
     fun `should return 4 times n for sequence that has at least length of 4 and all numbers are identical`() {
